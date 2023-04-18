@@ -1,0 +1,127 @@
+.product-list {
+    padding: 16px 32px;
+    width: 100%;
+    min-height: 100vh;
+
+    &--wrapper {
+        display: flex;
+        padding-left: 40px;
+        flex-wrap: wrap;
+    }
+}
+
+.item-card {
+    cursor: pointer;//The cursor CSS property sets the mouse cursor, if any, to show when the mouse pointer is over an element.
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    // height: inherit will, as the name implies, inherit the value from it's parent. If the parent's value is height: 50%, then the child will also be 50% of the height of it's parent. If the parent's size is defined in absolute values (e.g. height: 50px), then height: inherit and height: 100% will have the same behaviour for the child.
+    // padding: 0;
+    width: 16.66%;
+    margin: 16px;
+    border: 1px solid rgba($color: $black, $alpha: 0.1);
+    border-radius: 4px;
+        
+    .item-card__information {// &__information also written as .item-card__information
+        //
+        padding: 6px 12px;
+        margin-top: 12px;
+
+        .tittle {
+            text-overflow: ellipsis;//https://www.w3schools.com/cssref/css3_pr_text-overflow.php
+            font-size: 14px;
+            color: rgba($color: $black, $alpha: 0.8);
+            white-space: nowrap;//https://www.w3schools.com/cssref/pr_text_white-space.php
+            overflow-x: hidden;//https://www.w3schools.com/csS/css_overflow.asp
+
+            h3 {
+                margin: 8px 0 14px;
+            }
+        }
+    }
+    &__modal {
+        display: flex;
+        .img-wrap {
+            flex-basis: 40%;
+            min-width: 40%;
+        }
+        .meta {
+            flex-grow: 60%;
+            h3 {
+                margin-top: 12px;
+                margin-bottom: 4px;
+                opacity: 0.8;
+            }
+            p {
+                font-weight: 300;
+                color: grey;
+                font-family: Roboto;
+                font-size: 14px;
+            }
+        }
+
+        button.cart-add {
+            border-radius: 0px;
+        }
+        
+        .cart-addon {
+            justify-content: space-between;
+        }
+    }
+}
+
+
+
+
+.pricing {
+    small {
+        opacity: 0.5;//The opacity property specifies the opacity/transparency of an element.The opacity property can take a value from 0.0 - 1.0.
+        font-weight: 400;
+        margin-left: 8px;
+    }
+    span {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+button.cart-add {
+    margin-top: auto; //margin: auto; value is conidered as zero.
+    cursor: pointer;
+    width: 100%;
+    background-color: $primary;
+    border-radius: 0px 0px 4px 4px;
+    border: unset;
+    // The unset CSS keyword resets a property to its inherited value if the property naturally inherits from its parent, and to its initial value if not
+    font-size: 14px;
+    padding: 8px 16px;
+    color: $white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cart-addon {
+    margin-top: auto;
+    display: flex;
+    &__modal {
+        margin-top: 8px;
+    }
+    // margin-top: 8px;
+    justify-content: space-between;
+    align-items: center;
+    button {
+        cursor: pointer;
+        background-color: $primary;
+        border-radius: 4px;
+        border: unset;
+        font-size: 14px;
+        padding: 8px 12px;
+        color: $white;
+    }
+    span.counter {
+        font-weight: lighter;
+        padding: 0 16px;
+    }
+}
